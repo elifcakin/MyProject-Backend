@@ -22,7 +22,7 @@ import lombok.Data;
 
 public class User {
 	
-	
+
 	@Id
 	@GeneratedValue
 	private long id; 
@@ -30,7 +30,7 @@ public class User {
 	
 	@NotNull(message="{hoaxify.constraints.username.NotNull.message}")
 	@Size(min =4, max= 255)
-	@UniqueUsername
+	@UniqueUsername  
 	private String username;
 	
     @NotNull
