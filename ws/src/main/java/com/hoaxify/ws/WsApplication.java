@@ -11,13 +11,11 @@ import com.hoaxify.ws.user.UserRepository;
 import com.hoaxify.ws.user.UserService;
 
 @SpringBootApplication
-public class WsApplication {
+public class WsApplication { 
 
 	public static void main(String[] args) {
 		SpringApplication.run(WsApplication.class, args);
 	}
-	
-
 
 }
  
