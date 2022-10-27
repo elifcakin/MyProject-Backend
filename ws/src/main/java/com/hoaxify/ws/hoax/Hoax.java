@@ -11,9 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Size;
-
 import com.hoaxify.ws.user.User;
+import javax.persistence.OneToOne;
+import com.hoaxify.ws.file.FileAttachment;
 
 import lombok.Data;
 
@@ -25,7 +25,7 @@ public class Hoax {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Size(min=1, max=1000)
+	
 	@Column(length = 1000)
 	private String content;
 	
@@ -34,4 +34,7 @@ public class Hoax {
 
 	@ManyToOne
 	private User user;
+	
+	@OneToOne(mappedBy = "hoax")
+	private FileAttachment fileAttachment;
 }
