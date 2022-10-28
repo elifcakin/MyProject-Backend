@@ -14,6 +14,7 @@ import javax.persistence.TemporalType;
 import com.hoaxify.ws.user.User;
 import javax.persistence.OneToOne;
 import com.hoaxify.ws.file.FileAttachment;
+import javax.persistence.CascadeType;
 
 import lombok.Data;
 
@@ -35,6 +36,6 @@ public class Hoax {
 	@ManyToOne
 	private User user;
 	
-	@OneToOne(mappedBy = "hoax")
+	@OneToOne(mappedBy = "hoax", cascade = CascadeType.REMOVE)
 	private FileAttachment fileAttachment;
 }

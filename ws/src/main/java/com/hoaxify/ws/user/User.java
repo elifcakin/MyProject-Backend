@@ -1,7 +1,7 @@
 package com.hoaxify.ws.user;
 
 import java.util.Collection;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,12 +10,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
+import javax.persistence.CascadeType;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
-
+import javax.persistence.OneToMany;
 import lombok.Data;
+import com.hoaxify.ws.hoax.Hoax;
 
 @Data
 @Entity
@@ -47,6 +48,9 @@ public class User implements UserDetails{
 
 	private String image;
 
+	@OneToMany(mappedBy="user", cascade=CascadeType.REMOVE)
+	private List<Hoax> hoaxes;
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return AuthorityUtils.createAuthorityList("Role_user");
