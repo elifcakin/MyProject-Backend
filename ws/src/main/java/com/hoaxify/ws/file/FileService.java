@@ -101,7 +101,7 @@ public class FileService {
 		FileAttachment attachment = new FileAttachment();
 		attachment.setName(fileName);
 		attachment.setDate(new Date());
-		attachment.setFileType(fileType);
+		//attachment.setFileType(fileType);
 		return fileAttachmentRepository.save(attachment);
 	}
 

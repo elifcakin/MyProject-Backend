@@ -15,7 +15,6 @@ import com.hoaxify.ws.user.User;
 import javax.persistence.OneToOne;
 import com.hoaxify.ws.file.FileAttachment;
 import javax.persistence.CascadeType;
-
 import lombok.Data;
 
 @Data
