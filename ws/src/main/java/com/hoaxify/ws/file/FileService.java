@@ -11,7 +11,6 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
 import org.apache.tika.Tika;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -101,7 +100,6 @@ public class FileService {
 		FileAttachment attachment = new FileAttachment();
 		attachment.setName(fileName);
 		attachment.setDate(new Date());
-		//attachment.setFileType(fileType);
 		return fileAttachmentRepository.save(attachment);
 	}
 
@@ -122,6 +120,5 @@ public class FileService {
 		for(FileAttachment file: filesToBeRemoved) {
 			deleteAttachmentFile(file.getName());
 		}
-		
 	}
 }
